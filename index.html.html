@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>누가 네 최애야! 아일릿!!</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:linear-gradient(180deg,#fff5fd,#f1ebff);color:#4b3d7a}
+header{position:sticky;top:0;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);padding:15px;z-index:100}
+nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+nav a{color:#6a3fd9;text-decoration:none;font-weight:bold}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+background:radial-gradient(circle,#fff,#f2e7ff)}
+.hero h1{font-size:clamp(3rem,8vw,6rem);color:#4b1fa8;text-shadow:0 0 20px rgba(120,80,220,.35)}
+.hero p{font-size:1.3rem;margin-top:15px}
+.sparkle{position:fixed;animation:f 4s infinite ease-in-out;color:#d59cff}
+@keyframes f{50%{transform:translateY(-12px)}}
+.section{max-width:1200px;margin:auto;padding:70px 20px}
+h2{color:#6a3fd9;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:rgba(255,255,255,.8);padding:25px;border-radius:24px;box-shadow:0 6px 20px rgba(120,80,220,.15)}
+.member{font-size:1.1rem;font-weight:bold}
+.song{border-left:5px solid #8d6cff}
+.source{font-size:.8rem;color:#777;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.stat{background:#fff;padding:20px;border-radius:20px;text-align:center}
+.num{font-size:2rem;font-weight:bold;color:#5a29c7}
+footer{text-align:center;padding:40px;color:#777}
+
+.profile-img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+    border:3px solid white;
+    box-shadow:0 4px 12px rgba(0,0,0,.2);
+}
+
+</style>
+</head>
+<body>
+
+<div class="sparkle" style="left:10%;top:20%">✦</div>
+<div class="sparkle" style="left:85%;top:30%">✧</div>
+<div class="sparkle" style="left:20%;top:70%">✦</div>
+
+<header>
+<nav>
+<a href="#members">멤버</a>
+<a href="#music">노래</a>
+<a href="#weather">날씨</a>
+<a href="#busan">부산이슈</a>
+<a href="#pknu">부경대뉴스</a>
+<a href="#welfare">사회복지통계</a>
+</nav>
+</header>
+
+<section class="hero">
+
+<img
+src="https://raw.githubusercontent.com/yuyeonju781-commits/-/main/ChatGPT%20Image%202026%EB%85%84%205%EC%9B%94%2029%EC%9D%BC%20%EC%98%A4%ED%9B%84%2004_53_29.png"
+alt="프로필"
+class="profile-img">
+
+<h1>&lt;누가 네 최애야! 아일릿!!&gt;</h1>
+<p>💜 Dreamy Magical Archive 💜</p>
+
+</section>
+
+<section id="members" class="section">
+<h2>✨ ILLIT MEMBERS</h2>
+<div class="grid">
+<div class="card"><div class="member">윤아</div><p>리더, 매력적인 퍼포먼스</p></div>
+<div class="card"><div class="member">민주</div><p>청량한 보컬</p></div>
+<div class="card"><div class="member">모카</div><p>부드러운 분위기</p></div>
+<div class="card"><div class="member">원희</div><p>상큼한 매력</p></div>
+<div class="card"><div class="member">이로하</div><p>파워풀한 댄스</p></div>
+</div>
+</section>
+
+<section id="music" class="section">
+<h2>🎵 ILLIT MUSIC</h2>
+<div class="grid">
+<div class="card song">Magnetic</div>
+<div class="card song">Lucky Girl Syndrome</div>
+<div class="card song">Cherish (My Love)</div>
+<div class="card song">Tick-Tack</div>
+</div>
+</section>
+
+<section id="weather" class="section">
+<h2>🌤️ 부산 날씨</h2>
+<div class="card">
+22°C · 맑음 (예시 데이터)
+<div class="source">출처: 기상청 예정</div>
+</div>
+</section>
+
+<section id="busan" class="section">
+<h2>🌊 부산 이슈</h2>
+<div class="card">
+<ul>
+<li>부산 청년정책 확대</li>
+<li>북항 재개발 사업</li>
+<li>지역 복지서비스 강화</li>
+</ul>
+<div class="source">출처: 부산광역시 보도자료(예시)</div>
+</div>
+</section>
+
+<section id="pknu" class="section">
+<h2>🎓 부경대 뉴스</h2>
+<div class="card">
+<ul>
+<li>학생 지원 프로그램 운영</li>
+<li>연구 성과 발표</li>
+<li>봉사활동 진행</li>
+</ul>
+<div class="source">출처: 부경대학교 뉴스(예시)</div>
+</div>
+</section>
+
+<section id="welfare" class="section">
+<h2>📊 사회복지 통계</h2>
+<div class="stats">
+<div class="stat"><div class="num">1024만</div>노인인구</div>
+<div class="stat"><div class="num">255만</div>수급자</div>
+<div class="stat"><div class="num">213만</div>독거노인</div>
+</div>
+<div class="source">출처: 통계청·보건복지부 (예시 데이터)</div>
+</section>
+
+<footer>© ILLIT Fan Archive</footer>
+</body>
+</html>
