@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유연주를 파헤치다</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Arial,sans-serif;background:#f5f5f5;color:#111}
+header{padding:20px;border-bottom:1px solid #ddd;background:#fff;position:sticky;top:0}
+nav{display:flex;gap:12px;flex-wrap:wrap}
+button{padding:10px 14px;border:1px solid #111;background:#fff;cursor:pointer}
+.page{display:none;padding:40px;max-width:1100px;margin:auto}
+.page.active{display:block}
+h1{font-size:3rem;margin-bottom:10px}
+h2{margin-bottom:20px}
+.card{background:#fff;border:1px solid #ddd;padding:20px;margin:15px 0}
+.source{font-size:.8rem;color:#666;margin-top:8px}
+.chart{display:flex;gap:15px;align-items:flex-end;height:260px;margin-top:20px}
+.barwrap{text-align:center}
+.bar{width:80px;background:#111;color:#fff;display:flex;align-items:flex-start;justify-content:center;padding-top:5px}
+.hero{padding:60px 0}
+</style>
+</head>
+<body>
+<header>
+<nav>
+<button onclick="showPage('home')">HOME</button>
+<button onclick="showPage('about')">ABOUT</button>
+<button onclick="showPage('weather')">WEATHER</button>
+<button onclick="showPage('busan')">BUSAN ISSUE</button>
+<button onclick="showPage('pknu')">PKNU NEWS</button>
+<button onclick="showPage('data')">SOCIAL DATA</button>
+</nav>
+</header>
+
+<section id="home" class="page active">
+<div class="hero">
+<h1>유연주를 파헤치다</h1>
+<p>사회복지 · 부산 · 부경대학교 · 데이터</p>
+</div>
+</section>
+
+<section id="about" class="page">
+<h2>ABOUT</h2>
+<div class="card">
+부경대학교 사회복지학 전공 학생의 관심사와 정보를 모아둔 아카이브 사이트.
+</div>
+</section>
+
+<section id="weather" class="page">
+<h2>WEATHER</h2>
+<div class="card">
+부산 날씨 데이터 연결 전입니다.<br>
+API 연결 실패 시에도 이 안내 문구가 표시됩니다.
+<div class="source">출처: 기상청(Open API 연결 예정)</div>
+</div>
+</section>
+
+<section id="busan" class="page">
+<h2>BUSAN ISSUE</h2>
+<div class="card">부산시 청년정책 확대<div class="source">출처: 부산광역시 보도자료</div></div>
+<div class="card">북항 재개발 사업 추진<div class="source">출처: 부산광역시 보도자료</div></div>
+<div class="card">지역 복지서비스 강화<div class="source">출처: 부산광역시 보도자료</div></div>
+</section>
+
+<section id="pknu" class="page">
+<h2>PKNU NEWS</h2>
+<div class="card">부경대학교 연구 성과 소식<div class="source">출처: 부경대학교 뉴스</div></div>
+<div class="card">학생 지원 프로그램 안내<div class="source">출처: 부경대학교 뉴스</div></div>
+</section>
+
+<section id="data" class="page">
+<h2>SOCIAL WELFARE DATA</h2>
+<div class="chart">
+<div class="barwrap"><div class="bar" style="height:220px">1024만</div><p>노인인구</p></div>
+<div class="barwrap"><div class="bar" style="height:160px">255만</div><p>수급자</p></div>
+<div class="barwrap"><div class="bar" style="height:130px">213만</div><p>독거노인</p></div>
+</div>
+<div class="source">출처: 통계청·보건복지부 (예시 데이터)</div>
+</section>
+
+<script>
+function showPage(id){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById(id).classList.add('active');
+}
+</script>
+</body>
+</html>
