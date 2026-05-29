@@ -6,113 +6,114 @@
 <title>누가 네 최애야! 아일릿!!</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{
-font-family:Arial,sans-serif;
-background:linear-gradient(180deg,#f8efff,#efe8ff);
-color:#4b3f72;
-}
-.hero{
-height:70vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-background:radial-gradient(circle,#fff,#f2e6ff);
-}
-.hero h1{
-font-size:clamp(3rem,8vw,6rem);
-color:#4b1fa8;
-text-shadow:0 0 20px rgba(120,80,220,.3);
-}
-.hero p{margin-top:15px;font-size:1.2rem}
-.container{max-width:1200px;margin:auto;padding:40px 20px}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-gap:25px;
-}
-.card{
-background:rgba(255,255,255,.75);
-border-radius:25px;
-padding:25px;
-box-shadow:0 6px 20px rgba(150,120,255,.15);
-}
-.card h2{
-color:#6b3fe0;
-margin-bottom:15px;
-}
-.source{
-font-size:.8rem;
-color:#888;
-margin-top:10px;
-}
-.stat{
-font-size:2rem;
-font-weight:bold;
-color:#5b28c7;
-}
-ul{padding-left:20px}
-li{margin-bottom:8px}
-footer{text-align:center;padding:30px;color:#777}
+body{font-family:Arial,sans-serif;background:linear-gradient(180deg,#fff5fd,#f1ebff);color:#4b3d7a}
+header{position:sticky;top:0;background:rgba(255,255,255,.7);backdrop-filter:blur(12px);padding:15px;z-index:100}
+nav{display:flex;justify-content:center;gap:18px;flex-wrap:wrap}
+nav a{color:#6a3fd9;text-decoration:none;font-weight:bold}
+.hero{height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;
+background:radial-gradient(circle,#fff,#f2e7ff)}
+.hero h1{font-size:clamp(3rem,8vw,6rem);color:#4b1fa8;text-shadow:0 0 20px rgba(120,80,220,.35)}
+.hero p{font-size:1.3rem;margin-top:15px}
+.sparkle{position:fixed;animation:f 4s infinite ease-in-out;color:#d59cff}
+@keyframes f{50%{transform:translateY(-12px)}}
+.section{max-width:1200px;margin:auto;padding:70px 20px}
+h2{color:#6a3fd9;margin-bottom:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{background:rgba(255,255,255,.8);padding:25px;border-radius:24px;box-shadow:0 6px 20px rgba(120,80,220,.15)}
+.member{font-size:1.1rem;font-weight:bold}
+.song{border-left:5px solid #8d6cff}
+.source{font-size:.8rem;color:#777;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.stat{background:#fff;padding:20px;border-radius:20px;text-align:center}
+.num{font-size:2rem;font-weight:bold;color:#5a29c7}
+footer{text-align:center;padding:40px;color:#777}
 </style>
 </head>
 <body>
 
+<div class="sparkle" style="left:10%;top:20%">✦</div>
+<div class="sparkle" style="left:85%;top:30%">✧</div>
+<div class="sparkle" style="left:20%;top:70%">✦</div>
+
+<header>
+<nav>
+<a href="#members">멤버</a>
+<a href="#music">노래</a>
+<a href="#weather">날씨</a>
+<a href="#busan">부산이슈</a>
+<a href="#pknu">부경대뉴스</a>
+<a href="#welfare">사회복지통계</a>
+</nav>
+</header>
+
 <section class="hero">
 <h1>&lt;누가 네 최애야! 아일릿!!&gt;</h1>
-<p>✨ 반짝이는 우리들의 순간, 함께 빛나는 꿈 ✨</p>
+<p>💜 Dreamy Magical Archive 💜</p>
 </section>
 
-<div class="container">
+<section id="members" class="section">
+<h2>✨ ILLIT MEMBERS</h2>
 <div class="grid">
+<div class="card"><div class="member">윤아</div><p>리더, 매력적인 퍼포먼스</p></div>
+<div class="card"><div class="member">민주</div><p>청량한 보컬</p></div>
+<div class="card"><div class="member">모카</div><p>부드러운 분위기</p></div>
+<div class="card"><div class="member">원희</div><p>상큼한 매력</p></div>
+<div class="card"><div class="member">이로하</div><p>파워풀한 댄스</p></div>
+</div>
+</section>
 
-<div class="card">
+<section id="music" class="section">
+<h2>🎵 ILLIT MUSIC</h2>
+<div class="grid">
+<div class="card song">Magnetic</div>
+<div class="card song">Lucky Girl Syndrome</div>
+<div class="card song">Cherish (My Love)</div>
+<div class="card song">Tick-Tack</div>
+</div>
+</section>
+
+<section id="weather" class="section">
 <h2>🌤️ 부산 날씨</h2>
-<p><b>22°C</b> / 맑음</p>
-<p>체감온도 21°C</p>
-<div class="source">출처: 기상청 (예시 데이터)</div>
-</div>
-
 <div class="card">
+22°C · 맑음 (예시 데이터)
+<div class="source">출처: 기상청 예정</div>
+</div>
+</section>
+
+<section id="busan" class="section">
 <h2>🌊 부산 이슈</h2>
-<ul>
-<li>부산 청년정책 확대 추진</li>
-<li>북항 재개발 사업 진행</li>
-<li>지역사회 복지서비스 강화</li>
-</ul>
-<div class="source">출처: 부산광역시 보도자료 (예시)</div>
-</div>
-
 <div class="card">
+<ul>
+<li>부산 청년정책 확대</li>
+<li>북항 재개발 사업</li>
+<li>지역 복지서비스 강화</li>
+</ul>
+<div class="source">출처: 부산광역시 보도자료(예시)</div>
+</div>
+</section>
+
+<section id="pknu" class="section">
 <h2>🎓 부경대 뉴스</h2>
+<div class="card">
 <ul>
 <li>학생 지원 프로그램 운영</li>
-<li>지역사회 연계 봉사활동 진행</li>
-<li>연구성과 발표</li>
+<li>연구 성과 발표</li>
+<li>봉사활동 진행</li>
 </ul>
-<div class="source">출처: 부경대학교 뉴스 (예시)</div>
+<div class="source">출처: 부경대학교 뉴스(예시)</div>
 </div>
+</section>
 
-<div class="card">
+<section id="welfare" class="section">
 <h2>📊 사회복지 통계</h2>
-<p>노인인구</p>
-<div class="stat">1,024만 명</div>
-<br>
-<p>기초생활수급자</p>
-<div class="stat">255만 명</div>
-<br>
-<p>독거노인</p>
-<div class="stat">213만 명</div>
+<div class="stats">
+<div class="stat"><div class="num">1024만</div>노인인구</div>
+<div class="stat"><div class="num">255만</div>수급자</div>
+<div class="stat"><div class="num">213만</div>독거노인</div>
+</div>
 <div class="source">출처: 통계청·보건복지부 (예시 데이터)</div>
-</div>
+</section>
 
-</div>
-</div>
-
-<footer>
-© 누가 네 최애야! 아일릿!!
-</footer>
-
+<footer>© ILLIT Fan Archive</footer>
 </body>
 </html>
