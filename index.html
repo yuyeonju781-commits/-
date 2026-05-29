@@ -39,18 +39,16 @@ footer{text-align:center;padding:40px;color:#777}
 }
 
 
-.welfare-window{
-background:white;border-radius:20px;overflow:hidden;
-box-shadow:0 10px 30px rgba(0,0,0,.12);margin-top:20px;
+.chart-box{
+background:white;
+padding:25px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.1);
+margin-top:25px;
 }
-.window-header{
-background:#4b1fa8;color:white;padding:18px;font-size:1.2rem;font-weight:bold;
+.chart-box canvas{
+max-width:100%;
 }
-.window-content{
-padding:25px;display:grid;grid-template-columns:1.2fr 1fr;gap:25px;align-items:center;
-}
-.window-content img{width:100%;border-radius:12px;}
-@media(max-width:768px){.window-content{grid-template-columns:1fr;}}
 
 </style>
 </head>
@@ -139,22 +137,54 @@ class="profile-img">
 
 <section id="welfare" class="section">
 <h2>📊 사회복지 통계</h2>
-<div class="welfare-window">
-<div class="window-header">📈 청년 한부모가구 비중 7.6%…10가구 중 8가구는 '엄마+자녀'</div>
-<div class="window-content">
-<img src="1f4dbda3-4e92-4241-bcca-8cbc7e33009f.png" alt="청년 한부모가구 통계">
-<div>
-<h3>2023년 20~39세 청년 한부모가구의 사회·경제적 특성</h3>
-<p>청년 한부모가구는 81,452가구로 전체 청년가구의 7.6%를 차지했다.</p>
-<p>청년 한부모가구 가구주의 78.2%는 여성이며, 가구 구성은 모+자녀 형태가 66.9%로 가장 높게 나타났다.</p>
-<p>즉, 청년 한부모가구 10가구 중 약 8가구는 어머니가 자녀를 양육하는 형태로 볼 수 있다.</p>
-<p><strong>출처: 통계청</strong></p>
+
+<div class="chart-box">
+<h3>청년 한부모가구 비중 변화(2020~2023)</h3>
+<canvas id="singleParentChart"></canvas>
 </div>
+
+<div class="chart-box">
+<h3>청년 한부모가구 가구주 성별 구성</h3>
+<canvas id="genderChart"></canvas>
 </div>
+
+<div class="chart-box">
+<h3>청년 한부모가구 구성 비율</h3>
+<img src="1f4dbda3-4e92-4241-bcca-8cbc7e33009f.png" style="width:100%;border-radius:12px;">
+<p style="margin-top:15px;line-height:1.8">
+2023년 기준 청년 한부모가구는 전체 청년가구의 7.6%를 차지했다.
+가구주의 78.2%는 여성이며, '모+자녀' 형태가 66.9%로 가장 높은 비중을 보였다.
+</p>
 </div>
 </section>
 
 
 <footer>© ILLIT Fan Archive</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+new Chart(document.getElementById('singleParentChart'),{
+type:'line',
+data:{
+labels:['2020','2021','2022','2023'],
+datasets:[{
+label:'청년 한부모가구 비중(%)',
+data:[6.7,7.1,7.4,7.6],
+tension:0.3
+}]
+}
+});
+
+new Chart(document.getElementById('genderChart'),{
+type:'doughnut',
+data:{
+labels:['여성','남성'],
+datasets:[{
+data:[78.2,21.8]
+}]
+}
+});
+</script>
 </body>
+
 </html>
